@@ -1,0 +1,37 @@
+<!-- creer_article.html -->
+<!DOCTYPE html>
+
+<!--Mise en place de tinyMCE-->
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: '#id_contenu',
+        height: 500,
+        plugins: 'tinymcespellchecker',
+        toolbar: 'tinymcespellchecker',
+    });
+</script>
+<!--Formulaire de création de l'article-->
+    <h1><u>Créer l'article :</u></h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Catégorie :  {{ form.category}}</p>
+        <p>Titre de l'article :  {{ form.titre }}</p>
+        <p>Présentation :  {{ form.presentation }}</p>
+        <p>Contenu de l'article :</p>
+        {{ form.contenu }}
+        <br>
+        <input type="submit" value="Créer un article">
+    </form>
+
+<!--Passage de Ligne-->
+    <br>
+
+<!-- Bouton pour accéder à la page d'accueil -->
+    <div class="cadre-lien-retour">
+        <p><u>Si vous souhaitez accéder à la page d'accueil:</u></p>
+        <a href="{% url 'accueil' %}"><button class="btn btn-primary-accueil">Retour à la page d'accueil</button></a>
+    </div>
+
+</html>

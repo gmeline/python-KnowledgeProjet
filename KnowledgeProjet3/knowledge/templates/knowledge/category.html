@@ -1,0 +1,37 @@
+<!-- Mise en place du titre en couleur -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+<!-- Mise en place de la liste des catégories -->
+<div class="bienvenue-text-center">
+    <h3>Voici les catégories</h3>
+    <div class="category-container">
+        {% for category in categories %}
+            {% if not category.parent %}
+                <a href="{% url 'child_category' category.id %}">
+                    <button type="button" class="btn-category">
+                        <h3>{{ category.titre }}</h3>
+                        <p>{{ category.description }}</p>
+                    </button>
+                </a>
+                    {% if category.articles.all %}
+                        <ul>
+                            {% for article in category.articles.all %}
+                                <li>
+                                    <a href="{% url 'article' article.id %}">
+                                        <h4>{{ article.titre }}</h4>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Bouton pour accéder à la page d'accueil -->
+<div class="cadre-lien-retour">
+    <p><u>Si vous souhaitez accéder à la page d'accueil:</u></p>
+    <a href="{% url 'accueil' %}"><button class="btn btn-primary-accueil">Retour à la page d'accueil</button></a>
+</div>
