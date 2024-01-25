@@ -22,7 +22,7 @@ class CategoryParentView(View):
 
     def get(self, request, *args, **kwargs):
         category_name = kwargs.get('category_name')
-        categories = Category.objects.all()
+        categories = Category.objects.filter(parent__isnull=True)
         return render(request, self.template_name, {'category_name': category_name, 'categories': categories})
 
 #Classe qui permet d'afficher la liste des catégories enfants

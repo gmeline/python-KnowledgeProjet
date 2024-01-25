@@ -7,7 +7,6 @@
     <h3>Voici les catégories</h3>
     <div class="category-container">
         {% for category in categories %}
-            {% if not category.parent %}
                 <a href="{% url 'child_category' category.id %}">
                     <button type="button" class="btn-category">
                         <h3>{{ category.titre }}</h3>
@@ -25,7 +24,7 @@
                             {% endfor %}
                         </ul>
                     {% endif %}
-            {% endif %}
+
         {% endfor %}
     </div>
 </div>
