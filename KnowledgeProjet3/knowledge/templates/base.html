@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ma Page{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <script src="https://cdn.tiny.cloud/1/f0y6oyfbi9bg9cfbsoswr2qci0mlalonazp763m969qn1viu/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#id_contenu',
+            height: 500,
+            plugins: 'tinymcespellchecker',
+            toolbar: 'tinymcespellchecker',
+            content_css: '/static/styles.css',
+        });
+    </script>
+
+</head>
+<body>
+
+    {% block content %}{% endblock %}
+    
+</body>
+</html>

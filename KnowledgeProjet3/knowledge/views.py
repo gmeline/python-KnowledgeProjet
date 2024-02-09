@@ -59,6 +59,7 @@ class ArticleDetailView(View):
 
     def get(self, request, article_id):
         article = get_object_or_404(Article, id=article_id)
+        parent_category = article.category.parent if article.category.parent else None
         update_url = reverse('article', kwargs={'article_id': article.id})
         return render(request, self.template_name, {'article': article, 'update_url': update_url})
     

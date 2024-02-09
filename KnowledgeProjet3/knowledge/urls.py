@@ -1,5 +1,7 @@
 from django.urls import path
 from knowledge.views import ArticleDetailView, CreateArticleView, CreateCategorieView, IndexView,CategoryParentView,MonitoringView, CategoryChildView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', IndexView.as_view(), name='accueil'),
@@ -14,3 +16,5 @@ urlpatterns = [
     path('create_article/<int:category_id>/', CreateArticleView.as_view(), name='create_article'),
 ]
 
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

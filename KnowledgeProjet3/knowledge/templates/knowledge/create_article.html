@@ -1,17 +1,9 @@
-<!-- creer_article.html -->
-<!DOCTYPE html>
+{% extends "base.html" %}
 
-<!--Mise en place de tinyMCE-->
+{% block title %}Création d'article{% endblock %}
 
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<script>
-    tinymce.init({
-        selector: '#id_contenu',
-        height: 500,
-        plugins: 'tinymcespellchecker',
-        toolbar: 'tinymcespellchecker',
-    });
-</script>
+{% block content %}
+
 <!--Formulaire de création de l'article-->
     <h1><u>Créer l'article :</u></h1>
     <form method="post">
@@ -34,4 +26,4 @@
         <a href="{% url 'accueil' %}"><button class="btn btn-primary-accueil">Retour à la page d'accueil</button></a>
     </div>
 
-</html>
+{% endblock %}

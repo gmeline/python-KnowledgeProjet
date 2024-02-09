@@ -20,8 +20,9 @@ class Article(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="articles")
     titre = models.CharField(max_length=100)
     presentation = models.CharField(max_length=250)
-    contenu = tinymce_models.HTMLField()
+    contenu = models.TextField()
     date_publication = models.IntegerField(default=11)
+    
 
     def __str__(self):
         return self.titre

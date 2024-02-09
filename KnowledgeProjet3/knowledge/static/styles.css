@@ -1,6 +1,365 @@
-a{
-    color : black;
+/* Pour les bases Catégorie */
+body {
+  margin: 0;
+  padding: 0;
+  background-color:  #F3F6FB;
 }
-h3.category {
-    color: black;
+.texte-categorie {
+  font-size: 25px;
+  width: 250px;/*Définis la largeur*/
+  margin: 20px auto;/*Définis les marges sup, droite inf gauche*/
 }
+.category-container {
+  display: grid;
+  max-width: 950px;
+  grid-template-columns: 465px 465px; /* Deux colonnes de largeur fixe */
+  grid-template-rows: auto; /* Hauteur automatique pour les lignes */
+  margin: 0 auto;
+  grid-row-gap: 15px; /* Définis l'espace entre les lignes de la grille */
+  grid-column-gap: 20px; /* Définis l'espace entre les colonnes de la grille */
+}
+.category-card {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ffffff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.moncercle {
+  background: #bfd70e;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+.text-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.titre-carre {
+  width: 170px; /* Longueur dy rectangle */
+  height: 30px; /* Largeur du rectangle */
+  background-color: #ec5b5b;
+  border: 1px solid #ec5b5b;
+  margin-left: 10px; /* Déplacer le titre-carre vers la droite */
+}
+.titre{
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+}
+.description-category {
+  margin-top: 10px; /* Espacement du haut */
+  margin-left:10px;
+  width: 350px; /* Longueur du rectangle */
+  height: 40px; /* Largeur du rectangle */
+  font-size: 11px;
+}
+.btn-category:hover {
+  transform: scale(1.05);
+}
+.category-card h3,
+.category-card p {
+  margin: 0;
+}
+/* Pour les bases Sous-Catégorie */
+.back-link {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+}
+.arrow {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  margin-right: 10px;
+}
+.text {
+  position: absolute;
+  display: inline-block;
+  font-weight: bold;
+}
+.categorie-parents {
+  position: absolute;
+  top:1px;
+  transform:translateX(-50%);  
+}
+.carre-titre {
+  position: absolute;
+ top:17px;
+ left:38.5%;
+  width: 120px;
+ height: 60px;
+ background-color: #ec5b5b;
+ border: 1px solid #ec5b5b;
+  font-size: 10px;
+}
+.title{
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+}
+.head-ligne {
+  position: absolute;
+  left:45.5%;
+  top: 10px;
+  border-left: 0.5px solid rgb(71, 71, 71); /* Utilisation de border-left pour le trait vertical */
+  height: 65px; /* Hauteur du trait vertical */
+}
+.description{
+  position: absolute;
+  top:1%;
+  left:47%;
+  font-size:30px;
+}
+.header-rectangle{
+  padding: 15px; /* Ajoute de l'espace à l'intérieur de chaque article */
+  background-color: #fff; /* Ajoute un fond blanc à chaque article */
+  height: 80px;
+  width: auto;
+}
+.container-category {
+  position: absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top : 100px;
+  display: grid;
+  grid-template-columns: 700px;
+  grid-template-rows: minmax(50px, auto);
+  grid-gap: 5px;
+
+}
+.titre-sous-categorie {
+  position: relative;
+  white-space: nowrap;
+  margin-top: 40px;
+  text-align:center;
+  font-size: 35px;
+}
+.article-list {
+  list-style-type: none; 
+  margin-left:-130px;
+  margin-top: 10px;/*Permet de mettre la taille entre l'article et la sous categorie au niveau du haut*/
+}
+.article-list li {
+  margin-bottom: 10px; /* Espacement entre les articles */
+}
+.article-list li a {
+  text-decoration: none; /* Supprime les soulignements des liens */
+}
+.article-list li a:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol des liens */
+}
+.article-rectangle {
+  padding: 15px; /* Ajoute de l'espace à l'intérieur de chaque article */
+  background-color: #fff; /* Ajoute un fond blanc à chaque article */
+  margin-bottom: 1000px; /* Espacement entre les rectangles des articles */
+  width: 700px; /* Largeur du rectangle de l'article */
+  height: 110px; /* Hauteur du rectangle de l'article */
+  position: relative; /* Définit la position relative pour utiliser left */
+  left: 95%; /* Décale l'élément de moitié de sa largeur vers la droite */
+  transform: translateX(-50%); /* Recentre l'élément horizontalement */
+}
+.article-rectangle:hover {
+  border-color: #999; /* Change la couleur de la bordure au survol de la souris */
+}
+.article-titre{
+  position: relative;
+  color: black;
+  font-weight: bold;
+  margin-left : 60px;
+  margin-top:-35px;
+  font-size: 30px;
+}
+.article-presentation{
+  position: absolute;
+  color : black;
+  text-align: justify;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Nombre de lignes à afficher */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  top:40px;
+  margin-left:1%;
+  margin-right:2%;
+  font-size: 20px;
+}
+.petit-carre{
+  width: 40px; /* Largeur du carré */
+  height: 40px; /* Hauteur du carré */
+  background-color: blue; /* Couleur de fond du carré */
+}
+.ligne {
+  border-top: 1px solid #ccc;
+  margin-top: 50px; /* Espace entre la ligne et les éléments suivants */
+  margin-left:-90px; 
+  margin-bottom: -60px;
+  width: 830px;
+}
+/*Pour les bases Article*/
+.article-content {
+  max-width: 919px;/*Définis la largeur max que l'élément peut avoir*/
+  background-color: white;/*Définis la couleur du fond*/
+  margin: 0 auto;/*Définis la taille de toutes les marges (sup, inf, gauche et droite)*/
+  overflow: hidden;/*Définis que si le contenu dépasse la largeur max alors le contenu est masqué*/
+  box-shadow: 0px 10px 10px #0000001a;/*Définis une ombre*/
+  padding: 10px;
+}
+
+/* Pour les écrans de min 2560px */
+@media screen and (min-width: 2560px) {
+  .texte-categorie {
+    font-size: 30px;/*Définis la taille de la police*/
+    width: 300px;/*Définis la largeur*/
+  }
+  .titre{
+    font-size: 20px;
+  }
+  .description-category {
+    font-size: 16px;
+  }
+}
+/* pour les écrans entre 1880 et 2559px */
+@media screen and (max-width: 2559px) and (min-width: 1880px) {
+  .texte-categorie {
+    font-size: 30px;
+    width: 300px;/*Définis la largeur*/
+  }
+  .titre{
+    font-size: 20px;
+  }
+  .description-category {
+    font-size: 16px;
+  }
+}
+/* pour les écrans entre 1200 et 1879px */
+@media screen and (max-width: 1879px) and (min-width: 1200px) {
+  .titre{
+    font-size: 17px;
+  }
+  .titre-carre {
+    width: 140px;/*Longueur dy rectangle*/
+    height:25px;/*Largeur du rectangle*/
+  }
+  .description-category {
+    font-size: 13px;
+  }
+}
+/* pour les écrans entre 992 et 1199px */
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .titre-carre {
+    width: 130px;/*Longueur dy rectangle*/
+    height:25px;/*Largeur du rectangle*/
+  }
+  .moncercle {
+    width:45px;
+    height: 45px;
+  }
+}
+/* pour les écrans entre 768 et 991px */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .titre-carre {
+    width: 130px;/*Longueur dy rectangle*/
+    height:25px;/*Largeur du rectangle*/
+  }
+  .moncercle {
+    width:45px;
+    height: 45px;
+  }
+  }
+/* pour les écrans entre 576 et 767px */
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .category-container {
+    max-width: 465px; /* Largeur maximale de la colonne */
+    grid-template-columns: 1fr; /* Une seule colonne */
+    grid-template-rows: repeat(6, 90px); /* Six lignes avec hauteur automatique */
+  }
+  .moncercle {
+    width:40px;
+    height: 40px;
+  }
+  .titre-carre {
+    width: 130px;/*Longueur dy rectangle*/
+    height:25px;/*Largeur du rectangle*/
+  }
+}
+/* pour les écrans de max 575px */
+@media screen and (max-width: 575px) {
+  .texte-categorie {
+    font-size: 20px;
+    width: 200px;/*Définis la largeur*/
+  }
+  .titre{
+    color: white;
+  }
+  .category-container {
+    max-width: 465px; /* Largeur maximale de la colonne */
+    grid-template-columns: 1fr; /* Une seule colonne */
+    grid-template-rows: repeat(6, 90px); /* Six lignes avec hauteur automatique */
+  }
+  .moncercle {
+    width:40px;
+    height: 40px;
+  }
+  .titre-carre {
+    width: 130px;/*Longueur dy rectangle*/
+    height:25px;/*Largeur du rectangle*/
+  }
+}
+
+
+/* ##### ARTICLE ##### 
+body {
+  margin: 0;
+  padding: 0;
+  background-color:  #F3F6FB;
+}
+/* ##### ARTICLES ##### 
+/* Styles pour ordinateurs de taille minimum de 2560px 
+@media screen and (min-width: 2560px) {
+  
+  
+  /*Ici il faut agrandir le texte car il est pas trop lisible et aussi centrer le contenu dans la page
+  .contenu-article {
+    position:absolute;
+    left: 25%;
+    width: 100%;
+    height: auto;
+    top: 16%;
+  }
+  
+  .date-publication-article {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 4%;
+  }
+  .trait-horizontal-3 {
+    position: absolute;
+    width: 1202px;
+    height: 2px;
+    background-color: #b6b6b6;
+    bottom:5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .bouton-accueil{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom:1%;
+  }
+  .btn-accueil{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom:0%;
+  }
+}*/

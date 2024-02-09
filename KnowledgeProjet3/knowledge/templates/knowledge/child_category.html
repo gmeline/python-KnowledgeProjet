@@ -1,40 +1,52 @@
-<!-- Mise en place du titre en couleur -->
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+{% extends "base.html" %}
 
+{% block title %}Categorie{% endblock %}
+
+{% block content %}
 <!-- Affichage de la catégorie parente -->
-<div class="bienvenue-text-center">
-    <h3><u>{{ parent_category.titre }}</u></h3>
+<div class="header-rectangle">
+    <div>
+        <h3 class="categorie-parents">Articles on :</h3>
+            <button class="carre-titre">
+                <p class="title">{{ parent_category.titre }}</p>
+            </bouton>   
+    </div>
+    <div class="head-ligne"></div>  
+    <p class="description">{{parent_category.description}}</p>
+    <a href="{% url 'category' %}" class="back-link">
+            <span class="arrow">&larr;</span>
+            <span class="text">Back</span>
+    </a>
 </div>
-
 <!-- Affichage des catégories enfants -->
 <div class="bienvenue-text-center">
-    <div class="category-container">
+    <div class="container-category">
         {% for child_category in child_categories %}
-            <a href="{% url 'child_category' child_category.id %}">
-                <button type="button" class="btn-category">
-                    <h3>{{ child_category.titre }}</h3>
-                    <p>{{ child_category.description }}</p>
-                </button>
+        <div class="child-category-container">
+            <h3 class="titre-sous-categorie">{{ child_category.titre }}</h3>
+            <ul class="article-list">
                 {% for article in child_category.articles.all %}
-                    <ul class="article-list">
-                        {% for article in child_category.articles.all %}
-                            <li>
-                                <a href="{% url 'article' article.id %}">
-                                    <h4>{{ article.titre }}</h4>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
+                    <li class="article-rectangle">
+                        <a href="{% url 'article' article.id %}">
+                            <div class="petit-carre"></div>
+                            <h4 class="article-titre">{{ article.titre }}</h4>
+                            <p class="article-presentation">{{ article.presentation}}</p>
+                        </a>
+                        
+                    </li>
                 {% endfor %}
-            </a>
-            <br><br>
+            </ul>
+            <div class="ligne"></div>
+        </div>
+        <br><br>
         {% endfor %}
     </div>
 </div>
 
 <!-- Bouton pour accéder à la page d'accueil -->
-<div class="cadre-lien-retour">
+<!--<div class="cadre-lien-retour">
     <p><u>Si vous souhaitez accéder à la page d'accueil :</u></p>
     <a href="{% url 'accueil' %}"><button class="btn btn-primary-accueil">Retour à la page d'accueil</button></a>
-</div>
+</div>-->
+{% endblock %}
+

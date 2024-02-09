@@ -1,18 +1,30 @@
-<!-- Mise en place du titre en couleur -->
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
 
+{% extends "base.html" %}
+
+{% block title %}Article{% endblock %}
+
+{% block content %}
 <!-- Mise en place des informations sur la page -->
-<h1>{{ article.titre }}</h1>
-
-<div class="article-content">
-    {% autoescape off %}
-        {{ article.contenu }}
-    {% endautoescape %}
-</div>
+    <div class="trait-horizontal-1"></div>
+    <div class="article-content">
+        {% autoescape off %}
+            <h1 class="titre-article">{{article.titre}}</h1>
+            <div class="contenu-article">
+                {{ article.contenu }}
+            </div>
+        {% endautoescape %}
+        <div class="trait-horizontal-2"></div>
+        <div class="date-publication-article">
+            <p>Updated on : {{ article.date_publication}}</p>
+        </div>
+        <div class="trait-horizontal-3"></div>
+    </div>
+    
 
 <!-- Bouton pour accéder à la page d'accueil -->
-<div class="cadre-lien-retour">
-    <p><u>Si vous souhaitez accéder à la page d'accueil:</u></p>
-    <a href="{% url 'accueil' %}"><button class="btn btn-primary-accueil">Retour à la page d'accueil</button></a>
-</div>
+    <div >
+        <p class="bouton-accueil"><u>Si vous souhaitez accéder à la page d'accueil:</u></p>
+        <a href="{% url 'accueil' %}"><button class="btn-accueil">Retour à la page d'accueil</button></a>
+    </div>
+
+{% endblock %}
