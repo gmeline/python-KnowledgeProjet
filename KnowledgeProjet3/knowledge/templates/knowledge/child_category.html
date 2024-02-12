@@ -5,18 +5,19 @@
 {% block content %}
 <!-- Affichage de la catégorie parente -->
 <div class="header-rectangle">
-    <div>
-        <h3 class="categorie-parents">Articles on :</h3>
+    <a href="{% url 'category' %}" class="back-link">
+            <span class="arrow">&larr;</span>
+            <span class="text">Back</span>
+    </a>
+    <div class="container">
+        <h1 class="categorie-parents">Articles on :</h1>
             <button class="carre-titre">
                 <p class="title">{{ parent_category.titre }}</p>
             </bouton>   
     </div>
     <div class="head-ligne"></div>  
     <p class="description">{{parent_category.description}}</p>
-    <a href="{% url 'category' %}" class="back-link">
-            <span class="arrow">&larr;</span>
-            <span class="text">Back</span>
-    </a>
+    
 </div>
 <!-- Affichage des catégories enfants -->
 <div class="bienvenue-text-center">
