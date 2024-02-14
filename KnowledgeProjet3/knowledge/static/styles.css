@@ -58,7 +58,7 @@ body {
   margin-left:10px;
   width: 350px; /* Longueur du rectangle */
   height: 40px; /* Largeur du rectangle */
-  font-size: 11px;
+  font-size: 13px;
 }
 .btn-category:hover {
   transform: scale(1.05);
@@ -119,31 +119,30 @@ body {
   background-color: #fff; /* Ajoute un fond blanc à chaque article */
   height: 80px;
   width: auto;
-  border: 0.5px solid rgb(71, 71, 71);
 }
-
 .container-category {
-  position: absolute;
-  left:50%;
-  transform:translateX(-50%);
-  top : 100px;
+  margin: auto 10% ;
   display: grid;
-  grid-template-columns: 700px;
+  grid-template-columns: 1100px;
   grid-template-rows: minmax(50px, auto);
-  grid-gap: 5px;
-
+  grid-gap: 10px;
 }
 .titre-sous-categorie {
-  position: relative;
   white-space: nowrap;
   margin-top: 40px;
   text-align:center;
-  font-size: 35px;
+  font-size: 20px;
+}
+.article-rectangle {
+  padding: 15px; /* Ajoute de l'espace à l'intérieur de chaque article */
+  background-color: #fff; /* Ajoute un fond blanc à chaque article */
+  width: 600px; /* Largeur du rectangle de l'article */
+  height: 80px; /* Hauteur du rectangle de l'article */
+  margin-left: 20%; /* Décale l'élément de moitié de sa largeur vers la droite */
 }
 .article-list {
   list-style-type: none; 
   margin-left:-130px;
-  margin-top: 10px;/*Permet de mettre la taille entre l'article et la sous categorie au niveau du haut*/
 }
 .article-list li {
   margin-bottom: 10px; /* Espacement entre les articles */
@@ -151,32 +150,15 @@ body {
 .article-list li a {
   text-decoration: none; /* Supprime les soulignements des liens */
 }
-.article-list li a:hover {
-  text-decoration: underline; /* Ajoute un soulignement au survol des liens */
-}
-.article-rectangle {
-  padding: 15px; /* Ajoute de l'espace à l'intérieur de chaque article */
-  background-color: #fff; /* Ajoute un fond blanc à chaque article */
-  margin-bottom: 1000px; /* Espacement entre les rectangles des articles */
-  width: 700px; /* Largeur du rectangle de l'article */
-  height: 110px; /* Hauteur du rectangle de l'article */
-  position: relative; /* Définit la position relative pour utiliser left */
-  left: 95%; /* Décale l'élément de moitié de sa largeur vers la droite */
-  transform: translateX(-50%); /* Recentre l'élément horizontalement */
-}
-.article-rectangle:hover {
-  border-color: #999; /* Change la couleur de la bordure au survol de la souris */
-}
 .article-titre{
-  position: relative;
   color: black;
   font-weight: bold;
   margin-left : 60px;
-  margin-top:-35px;
-  font-size: 30px;
+  margin-top:-25px;
+  font-size: 16px;
 }
 .article-presentation{
-  position: absolute;
+  margin-top: -1%;
   color : black;
   text-align: justify;
   overflow: hidden;
@@ -184,10 +166,9 @@ body {
   -webkit-line-clamp: 2; /* Nombre de lignes à afficher */
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
-  top:40px;
   margin-left:1%;
   margin-right:2%;
-  font-size: 20px;
+  font-size: 14px;
 }
 .petit-carre{
   width: 40px; /* Largeur du carré */
@@ -197,19 +178,50 @@ body {
 .ligne {
   border-top: 1px solid #ccc;
   margin-top: 50px; /* Espace entre la ligne et les éléments suivants */
-  margin-left:-90px; 
+  margin-left:200px; 
   margin-bottom: -60px;
-  width: 830px;
+  width: 730px;
 }
+
 /*Pour les bases Article*/
 .article-content {
-  max-width: 919px;/*Définis la largeur max que l'élément peut avoir*/
+  max-width: 2000px;/*Définis la largeur max que l'élément peut avoir*/
   background-color: white;/*Définis la couleur du fond*/
   margin: 0 auto;/*Définis la taille de toutes les marges (sup, inf, gauche et droite)*/
   overflow: hidden;/*Définis que si le contenu dépasse la largeur max alors le contenu est masqué*/
-  box-shadow: 0px 10px 10px #0000001a;/*Définis une ombre*/
+  /*box-shadow: 0px 10px 10px #0000001a;Définis une ombre*/
   padding: 10px;
 }
+.titre-article{
+  font-size: 30px;
+  text-decoration: underline;
+}
+.trait-horizontal-1{
+  border-top: 1px solid #ccc;
+  padding-left:10px;
+  padding-right:10px;
+}
+.trait-horizontal-2{
+  border-top: 1px solid #ccc;
+  padding-left:10px;
+  padding-right:10px;
+}
+.date-publication-article{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size:20px;
+}
+.trait-horizontal-3{
+  border-top: 1px solid #ccc;
+  padding-left:10px;
+  padding-right:10px;
+}
+.retour-accueil{
+  text-align:center;
+  font-size:20px;
+  }
+
+
 
 /* Pour les écrans de min 2560px */
 @media screen and (min-width: 2560px) {
@@ -247,7 +259,44 @@ body {
     margin-top:-48px;
     font-size:30px;
   }
-
+  .container-category {
+    margin: auto 30% auto 30%;
+  }
+  .titre-sous-categorie{
+    font-size: 40px;
+  }
+  .article-rectangle {
+    width: 800px; /* Largeur du rectangle de l'article */
+    height: 110px;
+  }
+  .article-titre{
+    margin-top:-35px;
+    font-size: 25px;
+  }
+  .article-presentation{
+    margin-top: -1%;
+    font-size: 20px;
+  }
+  /*Page article*/
+  .titre-article{
+    font-size: 40px;
+  }
+  .trait-horizontal-1{
+    margin-top:30px;
+    margin-bottom:30px;
+  }
+  .trait-horizontal-2{
+    margin-top:30px;
+    margin-bottom:30px;
+  }
+  .date-publication-article{
+    font-size:25px;
+  }
+  .trait-horizontal-3{
+    margin-top:30px;
+    margin-bottom:30px;
+  }
+  
 }
 /* pour les écrans entre 1880 et 2559px */
 @media screen and (max-width: 2559px) and (min-width: 1880px) {
@@ -260,7 +309,7 @@ body {
     font-size: 20px;
   }
   .description-category {
-    font-size: 16px;
+    font-size: 17px;
   }
   /*Page sous-catégorie*/
   .back-link {
@@ -291,6 +340,74 @@ body {
   .description{
     margin-left:880px;
     font-size:28px;
+  }
+  .container-category {
+    margin: auto 21% auto 21%;
+  }
+  .titre-sous-categorie{
+    font-size:40px;
+  }
+  .article-rectangle {
+    padding: 15px; /* Ajoute de l'espace à l'intérieur de chaque article */
+    background-color: #fff; /* Ajoute un fond blanc à chaque article */
+    width: 800px; /* Largeur du rectangle de l'article */
+    height: 110px; /* Hauteur du rectangle de l'article */
+    margin-left: 55%; /* Décale l'élément de moitié de sa largeur vers la droite */
+    transform: translateX(-50%); /* Recentre l'élément horizontalement */
+  }
+  .article-list {
+    list-style-type: none; 
+    margin-left:-130px;
+  }
+  .article-list li {
+    margin-bottom: 10px; /* Espacement entre les articles */
+  }
+  .article-list li a {
+    text-decoration: none; /* Supprime les soulignements des liens */
+  }
+  .article-titre{
+    color: black;
+    font-weight: bold;
+    margin-left : 60px;
+    margin-top:-35px;
+    font-size: 25px;
+  }
+  .article-presentation{
+    margin-top: -1%;
+    color : black;
+    text-align: justify;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Nombre de lignes à afficher */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    margin-left:1%;
+    margin-right:2%;
+    font-size: 20px;
+  }
+  .petit-carre{
+    width: 40px; /* Largeur du carré */
+    height: 40px; /* Hauteur du carré */
+    background-color: blue; /* Couleur de fond du carré */
+  }
+  /*Page article*/
+  .titre-article{
+    font-size: 35px;
+  }
+  .trait-horizontal-1{
+    margin-bottom:25px;
+    margin-top:25px;
+  }
+  .trait-horizontal-2{
+    margin-bottom:25px;
+    margin-top:25px;
+  }
+  .date-publication-article{
+    font-size:25px;
+  }
+  .trait-horizontal-3{
+    margin-bottom:25px;
+    margin-top:25px;
   }
 }
 /* pour les écrans entre 1200 et 1879px */
@@ -331,17 +448,46 @@ body {
     margin-left:650px;
     font-size:20px;
   }
+  .titre-sous-categorie {
+    font-size: 30px;
+  }
+  .article-rectangle {
+    width: 700px; /* Largeur du rectangle de l'article */
+    height: 90px; /* Hauteur du rectangle de l'article */
+    margin-left: 24%; /* Décale l'élément de moitié de sa largeur vers la droite */
+  }
+  .article-titre{
+    margin-top:-35px;
+    font-size: 20px;
+  }
+  .article-presentation{
+    margin-top: -1%;
+    font-size: 18px;
+  }
+  /*Page article*/
+  .trait-horizontal-1{
+    margin-top:25px;
+    margin-bottom:25px;
+  }
+  .trait-horizontal-2{
+    margin-top:25px;
+    margin-bottom:25px;
+  }
+  .trait-horizontal-3{
+    margin-bottom:25px;
+    margin-top:25px;
+  }
 }
 /* pour les écrans entre 992 et 1199px */
 @media screen and (max-width: 1199px) and (min-width: 992px) {
   /*Page Catégorie*/
-  .titre-carre {
-    width: 130px;/*Longueur dy rectangle*/
-    height:25px;/*Largeur du rectangle*/
-  }
+  
   .moncercle {
     width:45px;
     height: 45px;
+  }
+  .description-category {
+    font-size: 13px;
   }
   /*Page sous-catégorie*/
   .back-link {
@@ -369,14 +515,42 @@ body {
     margin-left:570px;
     font-size:20px;
   }
+  .container-category {
+    grid-template-columns: 500px;
+  }
+  .article-rectangle {
+    width: 600px; /* Largeur du rectangle de l'article */
+    height: 80px; /* Hauteur du rectangle de l'article */
+    margin-left: 28%; /* Décale l'élément de moitié de sa largeur vers la droite */
+  }
+  .petit-carre{
+    width: 35px; /* Largeur du carré */
+    height: 35px; /* Hauteur du carré */
+    background-color: blue; /* Couleur de fond du carré */
+  }
+  .ligne {
+    margin-top: 40px; /* Espace entre la ligne et les éléments suivants */
+    margin-left:75px; 
+    width: 630px;
+  }
+  /*Page article*/
+  .trait-horizontal-1{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+  .trait-horizontal-2{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+  .trait-horizontal-3{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
 }
 /* pour les écrans entre 768 et 991px */
 @media screen and (max-width: 991px) and (min-width: 768px) {
   /*Page catégorie*/
-  .titre-carre {
-    width: 130px;/*Longueur dy rectangle*/
-    height:25px;/*Largeur du rectangle*/
-  }
+  
   .moncercle {
     width:45px;
     height: 45px;
@@ -405,6 +579,38 @@ body {
     margin-left:500px;
     margin-top:-38px;
     font-size:16px;
+  }
+  .container-category {
+    grid-template-columns: 500px;
+  }
+  .article-rectangle {
+    width: 600px; /* Largeur du rectangle de l'article */
+    height: 80px; /* Hauteur du rectangle de l'article */
+    margin-left: 67%; /* Décale l'élément de moitié de sa largeur vers la droite */
+    transform: translateX(-50%); /* Recentre l'élément horizontalement */
+  }
+  .petit-carre{
+    width: 35px; /* Largeur du carré */
+    height: 35px; /* Hauteur du carré */
+    background-color: blue; /* Couleur de fond du carré */
+  }
+  .ligne {
+    margin-top: 40px; /* Espace entre la ligne et les éléments suivants */
+    margin-left:-25px; 
+    width: 670px;
+  }
+  /*Page article*/
+  .trait-horizontal-1{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+  .trait-horizontal-2{
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+  .trait-horizontal-3{
+    margin-top:20px;
+    margin-bottom:20px;
   }
   }
 /* pour les écrans entre 576 et 767px */
@@ -447,6 +653,39 @@ body {
     margin-left:380px;
     margin-top:-50px;
     font-size:14px;
+  }
+  .container-category {
+    grid-template-columns: 500px;
+  }
+  .article-rectangle {
+    width: 500px; /* Largeur du rectangle de l'article */
+    margin-left: 10%; /* Décale l'élément de moitié de sa largeur vers la droite */
+  }
+  .petit-carre{
+    width: 30px; /* Largeur du carré */
+    height: 30px; /* Hauteur du carré */
+    background-color: blue; /* Couleur de fond du carré */
+  }
+  .ligne {
+    margin-top: 40px; /* Espace entre la ligne et les éléments suivants */
+    margin-left:-35px; 
+    width: 540px;
+  }
+  /*Page article*/
+  .titre-article{
+    font-size: 20px;
+  }
+  .trait-horizontal-1{
+    margin-top: 15px;
+    margin-bottom:15px;
+  }
+  .trait-horizontal-2{
+    margin-top: 15px;
+    margin-bottom:15px;
+  }
+  .trait-horizontal-3{
+    margin-top: 15px;
+    margin-bottom:15px;
   }
 }
 /* pour les écrans de max 575px */
@@ -501,6 +740,39 @@ body {
   .header-rectangle{
     height: 60px;
   }
+  .container-category {
+    grid-template-columns: 500px;
+  }
+  .article-rectangle {
+    width: 500px; /* Largeur du rectangle de l'article */
+    margin-left: 10%; /* Décale l'élément de moitié de sa largeur vers la droite */
+  }
+  .petit-carre{
+    width: 30px; /* Largeur du carré */
+    height: 30px; /* Hauteur du carré */
+    background-color: blue; /* Couleur de fond du carré */
+  }
+  .ligne {
+    margin-top: 40px; /* Espace entre la ligne et les éléments suivants */
+    margin-left:-35px; 
+    width: 540px;
+  }
+  /*Page article*/
+  .titre-article{
+    font-size: 20px;
+  }
+  .trait-horizontal-1{
+    margin-top: 15px;
+    margin-bottom:15px;
+  }
+  .trait-horizontal-2{
+    margin-top: 15px;
+    margin-bottom:15px;
+  }
+  .trait-horizontal-3{
+    margin-top: 15px;
+    margin-bottom:15px;
+  }
 }
 
 
@@ -552,7 +824,3 @@ body {
     bottom:0%;
   }
 }*/
-
-
-
-

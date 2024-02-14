@@ -5,10 +5,10 @@
 
 {% block content %}
 <!-- Mise en place des informations sur la page -->
-    <div class="trait-horizontal-1"></div>
     <div class="article-content">
         {% autoescape off %}
             <h1 class="titre-article">{{article.titre}}</h1>
+            <div class="trait-horizontal-1"></div>
             <div class="contenu-article">
                 {{ article.contenu }}
             </div>
@@ -18,13 +18,10 @@
             <p>Updated on : {{ article.date_publication}}</p>
         </div>
         <div class="trait-horizontal-3"></div>
+        <!-- Bouton pour accéder à la page d'accueil -->
+        <div class="retour-accueil">
+            <p class="bouton-accueil"><u>Si vous souhaitez accéder à la page d'accueil:</u></p>
+            <a href="{% url 'accueil' %}"><button class="btn-accueil">Retour à la page d'accueil</button></a>
+        </div>
     </div>
-    
-
-<!-- Bouton pour accéder à la page d'accueil -->
-    <div >
-        <p class="bouton-accueil"><u>Si vous souhaitez accéder à la page d'accueil:</u></p>
-        <a href="{% url 'accueil' %}"><button class="btn-accueil">Retour à la page d'accueil</button></a>
-    </div>
-
 {% endblock %}
